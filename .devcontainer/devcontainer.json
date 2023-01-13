@@ -8,7 +8,9 @@
 		"vscode": {
 			"extensions": [
 				"GitHub.copilot",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"cschleiden.vscode-github-actions",
+				"GitHub.copilot-labs"
 			]
 		}
 	}
