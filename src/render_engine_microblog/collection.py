@@ -1,6 +1,6 @@
 from dateutil import parser
 from render_engine.blog import Blog, BlogPost
-from render_engine.parsers import MarkdownPageParser
+from render_engine.parsers.markdown import MarkdownPageParser
 
 class MicroBlogPost(BlogPost):
     @property
