@@ -28,12 +28,12 @@ pip install render-engine render-engine-microblog
 
 ### Import the parser and collection
 
-In your render_engine config file import the `MicroblogPageParser` and `MicroblogCollection` classes.
+In your render_engine config file import the `MicroBlog` collection class.
 
 ```python
 
 from render_engine import Site
-from render_engine_microblog import MicroblogPageParser, MicroblogCollection
+from render_engine_microblog import MicroBlog
 ```
 
 ### Create a collection for your site
@@ -44,6 +44,6 @@ Create your collection like you would a blog. You will need to pass a `content_p
 site = Site()
 
 @site.collection
-class Microblog(MicroblogCollection):
+class MicroBlog(MicroBlog):
     content_path = "content/microblog"
 ```
