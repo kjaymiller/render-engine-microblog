@@ -1,6 +1,6 @@
 # Render Engine Microblog Parser
 
-This is a parser To create Microblog with Render Engine. This is based on the Blog Custom Collection.
+This is a parser To create a microblog using Render Engine. This is based on the [`Blog` Custom Collection](https://github.com/kjaymiller/render_engine/blob/main/src/render_engine/blog.py).
 
 This follows the guidance used by [Micro.blog](https://micro.blog) which is to be a post with no title. Slugs by default are the slugified datetime string in `YYYYMMDDHHMMSS` format.
 
