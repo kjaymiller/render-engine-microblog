@@ -3,6 +3,10 @@ from render_engine.blog import Blog, BlogPost
 from render_engine.parsers.markdown import MarkdownPageParser
 
 class MicroBlogPost(BlogPost):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.content = self._content
+
     @property
     def _slug(self):
         base_date = parser.parse(self.date)
