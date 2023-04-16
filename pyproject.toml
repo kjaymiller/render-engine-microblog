@@ -1,15 +1,14 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools", "wheel", "setuptools_scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "render_engine_microblog"
-version = "2023.1.0a5"
 description = "Microblog Parser and Collection for Render Engine"
 readme = "README.md"
 
 dependencies = [
-    "render-engine >= 2023.1.0a1",
+    "render-engine >= 2024.1.0a1",
 ]
 
 [project.optional-dependencies]
@@ -18,6 +17,9 @@ dependencies = [
 
 [tool.setuptools]
 package-dir = {"" = "src"}
+
+[tool.setuptools_scm]
+local_scheme = "no-local-version"
 
 [project.urls]
 homepage = "https://github.com/kjaymiller/render_engine_microblog/"
