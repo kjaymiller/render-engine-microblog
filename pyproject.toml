@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools", "setuptools_scm", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "render_engine_microblog"
-version = "2023.1.0a5"
+dynamic = ["version"]
 description = "Microblog Parser and Collection for Render Engine"
 readme = "README.md"
 
@@ -25,3 +25,7 @@ repository = "https://github.com/kjaymiller/render_engine_microblog/"
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
+
+[tool.setuptools_scm]
+local_scheme = "no-local-version"
+# version_scheme = "python-simplified-semver"
