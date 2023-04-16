@@ -4,6 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "render_engine_microblog"
+dynamic = ["version"]
 description = "Microblog Parser and Collection for Render Engine"
 readme = "README.md"
 
@@ -27,3 +28,6 @@ repository = "https://github.com/kjaymiller/render_engine_microblog/"
 
 [tool.pytest.ini_options]
 pythonpath = ["src"]
+
+[tool.setuptools_scm]
+local_scheme = "no-local-version"
