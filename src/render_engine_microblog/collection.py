@@ -12,7 +12,6 @@ class MicroBlogPost(Page):
         for attr in ["date_published", "date"]:
             if getattr(self, attr, None):
                 return getattr(self, attr).strftime("%Y%m%d%H%M")
-
     @property    
     def _title(self):
         return ""
