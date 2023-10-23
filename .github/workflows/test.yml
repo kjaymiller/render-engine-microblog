@@ -1,6 +1,12 @@
 name: Python Test
 
-on: [push, pull_request]
+on: 
+  push:
+    branches: [main]
+  pull_request:
+  workflow_call:
+  workflow_dispatch:
+
 
 jobs: 
   build:
