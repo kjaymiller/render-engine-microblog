@@ -1,0 +1,8 @@
+{% extends "_base.html" %}
+{% block content %}
+    {% for post in pages %}
+        <p>{{ post.content }}</p>
+        <p>on {{ post.date }}</p>
+    {% endfor %}
+{% endblock %}
+```

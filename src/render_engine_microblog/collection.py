@@ -19,3 +19,4 @@ class MicroBlogPost(Page):
 class MicroBlog(Blog):
     PageParser = MarkdownPageParser
     content_type = MicroBlogPost
+    has_archive = True

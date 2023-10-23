@@ -28,7 +28,7 @@ def microblog_collection(tmp_path_factory):
 def microblog_site(tmp_path_factory):
     
     mb_output_path = tmp_path_factory.getbasetemp() / "microblog_output"
-    mb_collection_path = tmp_path_factory.getbasetemp() / "microblog_collection"
+    mb_collection_path = tmp_path_factory.getbasetemp() / "microblog_site_collection"
 
     mb_collection_path.mkdir()
     mb_collection_path.joinpath("201801010000.md").write_text(
