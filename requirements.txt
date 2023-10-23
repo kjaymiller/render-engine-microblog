@@ -15,7 +15,9 @@ gitpython==3.1.40
 iniconfig==2.0.0
     # via pytest
 jinja2==3.1.2
-    # via render-engine
+    # via
+    #   render-engine
+    #   render-engine-microblog (pyproject.toml)
 markdown-it-py==3.0.0
     # via rich
 markdown2==2.4.10
@@ -48,7 +50,7 @@ python-slugify==8.0.1
     # via render-engine
 pyyaml==6.0.1
     # via python-frontmatter
-render-engine==2023.10.2a3
+render-engine==2023.10.2a4
     # via render-engine-microblog (pyproject.toml)
 rich==13.6.0
     # via render-engine

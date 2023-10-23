@@ -1,8 +1,8 @@
-{% extends "_base.html" %}
+{% extends "base.html" %}
+{% block title %}{{super()}}|Microblog{% endblock %}
 {% block content %}
     {% for post in pages %}
-        <p>{{ post.content }}</p>
+        {{ post.content }}
         <p>on {{ post.date }}</p>
     {% endfor %}
 {% endblock %}
-```
