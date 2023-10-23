@@ -76,9 +76,11 @@ def test_microblog_site_archive(microblog_site):
     template = microblog_site.engine.get_template(archive_template)
     page = archive.pages[0]
     assert "<p>Hello World</p>" in page.content
+
     
     list(microblog_site.route_list['testmicroblog'].archives)[0].template == "microblog.html"
     page_output = microblog_site.output_path.joinpath("testmicroblog.html")
+    assert "Untitled Site | TestMicroBlog"
     assert "<p>Hello World</p>" in page_output.read_text()
 
 
