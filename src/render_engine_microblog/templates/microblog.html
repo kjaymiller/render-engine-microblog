@@ -2,7 +2,9 @@
 {% block title %}{{super()}}|Microblog{% endblock %}
 {% block content %}
     {% for post in pages %}
-        {{ post.content }}
-        <p>on {{ post.date }}</p>
+        <div> 
+            {{ post.content }}
+            <p>on {{ post.date }}</p>
+        </div>
     {% endfor %}
 {% endblock %}
