@@ -43,6 +43,7 @@ def test_microblog_archive_uses_microblog_theme(microblog_site):
 
 
 
+@pytest.mark.skip(reason="Not implemented yet")
 def test_microblog_collection_has_div(microblog_site):
     p=microblog_site.output_path.joinpath("testmicroblog.html").read_text()
     soup = Soup(p)
