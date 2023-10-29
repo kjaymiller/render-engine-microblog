@@ -17,7 +17,9 @@ dependencies = [
     dev = [
         "pytest",
         "pytest-mock",
-        "gazpacho"]
+        "gazpacho",
+        "pip-tools",
+    ]
 
 
 [tool.setuptools]
