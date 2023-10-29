@@ -1,51 +1,4 @@
-import pytest
-from render_engine_microblog.collection import MicroBlog, MicroBlogPost
-from render_engine.site import Site
-import datetime
-
-@pytest.fixture(scope="module")
-def microblog_post():
-    class MBP(MicroBlogPost):
-        content = "Hello World"
-        date = datetime.datetime(2018, 1, 1, 0, 0, 0)
-
-    return MBP()
-
-
-@pytest.fixture(scope="module")
-def microblog_collection(tmp_path_factory):
-    mb_content_path = tmp_path_factory.getbasetemp().joinpath("microblog_collection")
-    tmp_path_factory.getbasetemp().joinpath("microblog_collection").mkdir()
-    tmp_path_factory.getbasetemp().joinpath("microblog_collection/201801010000.md").write_text(
-        """---\ndate: 2018-01-01T00:00:00Z\n---\nHello World""",
-    )
-    class MicroBlogCollection(MicroBlog):
-        content_path = mb_content_path
-
-    return MicroBlogCollection()
-
-@pytest.fixture(scope="session")
-def microblog_site(tmp_path_factory):
-    
-    mb_output_path = tmp_path_factory.getbasetemp() / "microblog_output"
-    mb_collection_path = tmp_path_factory.getbasetemp() / "microblog_site_collection"
-
-    mb_collection_path.mkdir()
-    mb_collection_path.joinpath("201801010000.md").write_text(
-        """---\ndate: 2018-01-01T00:00:00Z\n---\nHello World""",
-    )
-
-    class MicroBlogSite(Site):
-        output_path = mb_output_path
-
-    microblog_site = MicroBlogSite()
-    @microblog_site.collection
-    class TestMicroBlog(MicroBlog):
-        content_path = mb_collection_path
-
-    microblog_site.render()
-    return microblog_site
-
+from gazpacho import Soup
 
 def test_microblog_post_title_is_empty(microblog_post):
     """Tests that the title of a MicroBlogPost is empty"""
@@ -87,3 +40,15 @@ def test_microblog_site_archive(microblog_site):
 def test_microblog_site_loads_theme(microblog_site):
     print(microblog_site.engine.list_templates())
     assert "microblog.html" in microblog_site.engine.list_templates()
+
+
+def test_microblog_archive_uses_microblog_theme(microblog_site):
+    assert microblog_site.route_list["testmicroblog"].archive_template == "microblog.html"
+
+
+
+def test_microblog_collection_has_div(microblog_site):
+    p=microblog_site.output_path.joinpath("testmicroblog.html").read_text()
+    soup = Soup(p)
+    posts = soup.find("div", {"class": "microblog-post"})
+    assert posts

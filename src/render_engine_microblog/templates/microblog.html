@@ -3,7 +3,7 @@
 {% block content %}
 <h1>{{title}}</h1>
     {% for post in pages %}
-        <div> 
+        <div class="microblog-post"> 
             {{ post.content }}
             <p>on {{ post.date }}</p>
         </div>
