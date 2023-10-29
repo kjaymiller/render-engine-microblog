@@ -62,7 +62,7 @@ python-slugify==8.0.1
     # via render-engine
 pyyaml==6.0.1
     # via python-frontmatter
-render-engine==2023.10.3a4
+render-engine==2023.10.3a5
     # via render-engine-microblog (pyproject.toml)
 rich==13.6.0
     # via render-engine
