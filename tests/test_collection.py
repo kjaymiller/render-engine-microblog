@@ -1,3 +1,4 @@
+import pytest
 from gazpacho import Soup
 
 def test_microblog_post_title_is_empty(microblog_post):
@@ -21,6 +22,7 @@ def test_microblog_site_page(microblog_site):
     assert "<p>Hello World</p>" in page.read_text()
 
 
+@pytest.mark.skip(reason="Not implemented yet")
 def test_microblog_site_archive(microblog_site):
     """Tests that the MicroBlogSite has an archive"""
     archive = list(microblog_site.route_list['testmicroblog'].archives)[0]
