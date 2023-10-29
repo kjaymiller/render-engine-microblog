@@ -5,7 +5,7 @@
     {% for post in pages %}
         <div class="microblog-post"> 
             {{ post.content }}
-            <p>on {{ post.date }}</p>
+            <p id="microblog-post-metadata">on {{ post.date }}</p>
         </div>
     {% endfor %}
 {% endblock %}
