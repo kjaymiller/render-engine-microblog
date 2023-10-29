@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-{% block title %}{{super()}}|Microblog{% endblock %}
+{% block title %}{{super()}}| {{title}} {% endblock %}
 {% block content %}
+<h1>{{title}}</h1>
     {% for post in pages %}
         <div> 
             {{ post.content }}
