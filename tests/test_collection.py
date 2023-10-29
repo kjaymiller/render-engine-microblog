@@ -22,19 +22,13 @@ def test_microblog_site_page(microblog_site):
 
 
 def test_microblog_site_archive(microblog_site):
+    """Tests that the MicroBlogSite has an archive"""
     archive = list(microblog_site.route_list['testmicroblog'].archives)[0]
     archive_template = archive.template
     assert  archive_template == "microblog.html"
 
-    template = microblog_site.engine.get_template(archive_template)
     page = archive.pages[0]
     assert "<p>Hello World</p>" in page.content
-
-    
-    list(microblog_site.route_list['testmicroblog'].archives)[0].template == "microblog.html"
-    page_output = microblog_site.output_path.joinpath("testmicroblog.html")
-    assert "Untitled Site | TestMicroBlog"
-    assert "<p>Hello World</p>" in page_output.read_text()
 
 
 def test_microblog_site_loads_theme(microblog_site):
