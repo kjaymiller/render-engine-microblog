@@ -14,7 +14,10 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-    dev = ["pytest", "pytest-mock"]
+    dev = [
+        "pytest",
+        "pytest-mock",
+        "gazpacho"]
 
 
 [tool.setuptools]
