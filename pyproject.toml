@@ -9,7 +9,7 @@ description = "Microblog Parser and Collection for Render Engine"
 readme = "README.md"
 
 dependencies = [
-    "render-engine >= 2023.10.3a5",
+    "render-engine >= 2023.11.1a1",
     "jinja2",
 ]
 
@@ -19,19 +19,20 @@ dependencies = [
         "pytest-mock",
         "gazpacho",
         "pip-tools",
+        "ruff",
     ]
-
-
-[tool.setuptools]
-package-dir = {"" = "src"}
 
 [project.urls]
 homepage = "https://github.com/kjaymiller/render_engine_microblog/"
 repository = "https://github.com/kjaymiller/render_engine_microblog/"
 
-[tool.pytest.ini_options]
-pythonpath = ["src"]
-
 [tool.setuptools_scm]
 local_scheme = "no-local-version"
 # version_scheme = "python-simplified-semver"
+
+[tool.ruff]
+select = ["E", "F", "I", "UP"]
+target-version = "py311"
+line-length = 120
+src = ["src"]
+ignore-init-module-imports = true
