@@ -1,8 +1,10 @@
-import pytest
 import datetime
+
+import pytest
 from render_engine import Site
 from render_engine_microblog import MicroBlog
 from render_engine_microblog.collection import MicroBlogPost
+
 
 @pytest.fixture(scope="module")
 def microblog_post():
@@ -20,14 +22,15 @@ def microblog_collection(tmp_path_factory):
     tmp_path_factory.getbasetemp().joinpath("microblog_collection/201801010000.md").write_text(
         """---\ndate: 2018-01-01T00:00:00Z\n---\nHello World""",
     )
+
     class MicroBlogCollection(MicroBlog):
         content_path = mb_content_path
 
     return MicroBlogCollection()
 
+
 @pytest.fixture(scope="session")
 def microblog_site(tmp_path_factory):
-    
     mb_output_path = tmp_path_factory.getbasetemp() / "microblog_output"
     mb_collection_path = tmp_path_factory.getbasetemp() / "microblog_site_collection"
 
@@ -40,6 +43,7 @@ def microblog_site(tmp_path_factory):
         output_path = mb_output_path
 
     microblog_site = MicroBlogSite()
+
     @microblog_site.collection
     class TestMicroBlog(MicroBlog):
         content_path = mb_collection_path

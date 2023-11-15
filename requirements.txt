@@ -56,16 +56,18 @@ pytest-mock==3.12.0
     # via render-engine-microblog (pyproject.toml)
 python-dateutil==2.8.2
     # via render-engine
-python-frontmatter==1.0.0
+python-frontmatter==1.0.1
     # via render-engine
 python-slugify==8.0.1
     # via render-engine
 pyyaml==6.0.1
     # via python-frontmatter
-render-engine==2023.10.3a5
+render-engine==2023.11.1a1
     # via render-engine-microblog (pyproject.toml)
-rich==13.6.0
+rich==13.7.0
     # via render-engine
+ruff==0.1.5
+    # via render-engine-microblog (pyproject.toml)
 six==1.16.0
     # via python-dateutil
 smmap==5.0.1
@@ -80,7 +82,7 @@ typing-extensions==4.8.0
     # via typer
 watchdog==3.0.0
     # via render-engine
-wheel==0.41.2
+wheel==0.41.3
     # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
