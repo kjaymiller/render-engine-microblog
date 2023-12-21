@@ -1,7 +1,6 @@
 from render_engine.blog import Blog
 from render_engine.page import Page
-from render_engine.parsers.markdown import MarkdownPageParser
-
+from render_engine_markdown import MarkdownPageParser
 from .themes import microblog_theme
 
 
