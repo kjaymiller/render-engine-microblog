@@ -11,6 +11,7 @@ readme = "README.md"
 dependencies = [
     "render-engine >= 2023.12.1b2",
     "jinja2",
+    "render_engine_markdown",
 ]
 
 [project.optional-dependencies]
