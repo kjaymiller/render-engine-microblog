@@ -9,7 +9,7 @@ description = "Microblog Parser and Collection for Render Engine"
 readme = "README.md"
 
 dependencies = [
-    "render-engine >= 2024.1.1a1",
+    "render-engine >= 2024.1.1a2",
     "jinja2",
     "render_engine_markdown",
 ]
