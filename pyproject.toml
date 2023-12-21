@@ -9,7 +9,7 @@ description = "Microblog Parser and Collection for Render Engine"
 readme = "README.md"
 
 dependencies = [
-    "render-engine >= 2023.12.1b2",
+    "render-engine >= 2024.1.1a1",
     "jinja2",
     "render_engine_markdown",
 ]
@@ -29,11 +29,9 @@ repository = "https://github.com/kjaymiller/render_engine_microblog/"
 
 [tool.setuptools_scm]
 local_scheme = "no-local-version"
-# version_scheme = "python-simplified-semver"
 
 [tool.ruff]
 select = ["E", "F", "I", "UP"]
 target-version = "py311"
 line-length = 120
-src = ["src"]
 ignore-init-module-imports = true
