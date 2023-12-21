@@ -29,11 +29,9 @@ repository = "https://github.com/kjaymiller/render_engine_microblog/"
 
 [tool.setuptools_scm]
 local_scheme = "no-local-version"
-# version_scheme = "python-simplified-semver"
 
 [tool.ruff]
 select = ["E", "F", "I", "UP"]
 target-version = "py311"
 line-length = 120
-src = ["src"]
 ignore-init-module-imports = true
