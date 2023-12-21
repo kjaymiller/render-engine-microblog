@@ -7,7 +7,6 @@ from .themes import microblog_theme
 class MicroBlogPost(Page):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.content = self._content
 
     @property
     def _slug(self):

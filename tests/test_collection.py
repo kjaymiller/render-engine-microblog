@@ -15,7 +15,7 @@ def test_microblog_post_slug_is_timestamp(microblog_post):
 def test_microblog_post_content_is_content(microblog_collection):
     page = list(microblog_collection)[0]
     assert page._slug == "201801010000"
-    assert "<p>Hello World</p>" in page.content
+    assert "<p>Hello World</p>" in page._content
 
 
 def test_microblog_site_page(microblog_site):
@@ -37,8 +37,7 @@ def test_microblog_site_archive(microblog_site):
 
 
 def test_microblog_site_loads_theme(microblog_site):
-    print(microblog_site.engine.list_templates())
-    assert "microblog.html" in microblog_site.engine.list_templates()
+    assert "microblog.html" in microblog_site.theme_manager.engine.list_templates()
 
 
 def test_microblog_archive_uses_microblog_theme(microblog_site):
