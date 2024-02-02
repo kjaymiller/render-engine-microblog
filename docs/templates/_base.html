@@ -1,9 +1,9 @@
 {% extends "base_templates/_base.html" %}
 {% block head %}
 {{super()}}
-<link rel="stylesheet" href="/static/style.css">
-<link rel="stylesheet" href="/static/pico.slim.min.css">
-<link rel="stylesheet" href="/static/pygments.css">
+<link rel="stylesheet" href="{{SITE_URL}}/static/style.css">
+<link rel="stylesheet" href="{{SITE_URL}}/static/pico.slim.min.css">
+<link rel="stylesheet" href="{{SITE_URL}}/static/pygments.css">
 {% endblock %}
 
 {% block header %}

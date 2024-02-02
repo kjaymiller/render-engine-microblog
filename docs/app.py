@@ -15,10 +15,10 @@ app.output_path = "output"
 app.template_path = "docs/templates"
 app.static_paths.add("docs/static")
 
-if os.getenv("production", False).lower() not in ["0", "false", "f"]:
+if os.getenv("production", "false").lower() not in ["0", "false", "f"]:
     SITE_URL = "https://kjaymiller.github.io/microblog" 
 else:
-    "http://localhost:8000"
+    SITE_URL = "http://localhost:8000"
 
 app.site_vars.update(
     {
