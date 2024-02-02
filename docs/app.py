@@ -17,20 +17,22 @@ app.static_paths.add("docs/static")
 
 SITE_URL = "https://kjaymiller.github.io/microblog" if os.getenv("production") else "http://localhost:8000"
 
-app.site_vars.update({
-    "SITE_TITLE":"Render Engine Microblog",
-    "SITE_URL": SITE_URL,
-    "OWNER":{
-        "name": "Jay Miller",
-        "email": "kjaymiller@gmail.com",
-    },
-    "NAVIGATION":[
-        {
-            "name": "Home",
-            "url": SITE_URL,
+app.site_vars.update(
+    {
+        "SITE_TITLE": "Render Engine Microblog",
+        "SITE_URL": SITE_URL,
+        "OWNER": {
+            "name": "Jay Miller",
+            "email": "kjaymiller@gmail.com",
         },
-    ],
-})
+        "NAVIGATION": [
+            {
+                "name": "Home",
+                "url": SITE_URL,
+            },
+        ],
+    }
+)
 
 markdown_extras = [
     "admonitions",
@@ -39,6 +41,7 @@ markdown_extras = [
     "header-ids",
     "mermaid",
 ]
+
 
 @app.page
 class Index(Page):
