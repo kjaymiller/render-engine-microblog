@@ -30,7 +30,7 @@ def test_microblog_site_archive(microblog_site):
     """Tests that the MicroBlogSite has an archive"""
     archive = list(microblog_site.route_list["testmicroblog"].archives)[0]
     archive_template = archive.template
-    assert archive_template == "microblog.html"
+    assert archive_template == "microblog/microblog.html"
 
     page = archive.pages[0]
     assert "<p>Hello World</p>" in page.content
@@ -41,7 +41,7 @@ def test_microblog_site_loads_theme(microblog_site):
 
 
 def test_microblog_archive_uses_microblog_theme(microblog_site):
-    assert microblog_site.route_list["testmicroblog"].archive_template == "microblog.html"
+    assert microblog_site.route_list["testmicroblog"].archive_template == "microblog/microblog.html"
 
 
 @pytest.mark.skip(reason="Not implemented yet")
