@@ -5,4 +5,5 @@ microblog_theme = Theme(
     loader=PackageLoader("render_engine_microblog", "templates"),
     plugins={},
     filters=[],
+    prefix="microblog",
 )
