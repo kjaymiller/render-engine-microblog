@@ -20,7 +20,7 @@ class MicroBlogPost(Page):
 
 class MicroBlog(Blog):
     required_themes = [microblog_theme]
-    PageParser = MarkdownPageParser
+    Parser = MarkdownPageParser
     content_type = MicroBlogPost
-    archive_template = "microblog.html"
+    archive_template = "microblog/microblog.html"
     has_archive = True
