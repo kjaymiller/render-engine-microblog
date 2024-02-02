@@ -17,9 +17,8 @@ dependencies = [
 [project.optional-dependencies]
     dev = [
         "pytest",
-        "pytest-mock",
+        "pytest-cov",
         "gazpacho",
-        "pip-tools",
         "ruff",
     ]
 
@@ -35,3 +34,10 @@ select = ["E", "F", "I", "UP"]
 target-version = "py311"
 line-length = 120
 ignore-init-module-imports = true
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-ra -q --cov"
+testpaths = [
+    "tests",
+]

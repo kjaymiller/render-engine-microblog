@@ -6,9 +6,6 @@ from .themes import microblog_theme
 
 
 class MicroBlogPost(Page):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
     @property
     def _slug(self):
         return self.date.strftime("%Y%m%d%H%M")
@@ -22,5 +19,6 @@ class MicroBlog(Blog):
     required_themes = [microblog_theme]
     Parser = MarkdownPageParser
     content_type = MicroBlogPost
+    template = "microblog/microblog_post.html"
     archive_template = "microblog/microblog.html"
     has_archive = True

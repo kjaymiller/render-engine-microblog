@@ -1,7 +1,3 @@
-import pytest
-from gazpacho import Soup
-
-
 def test_microblog_post_title_is_empty(microblog_post):
     """Tests that the title of a MicroBlogPost is empty"""
 
@@ -25,7 +21,6 @@ def test_microblog_site_page(microblog_site):
     assert "<p>Hello World</p>" in page.read_text()
 
 
-@pytest.mark.skip(reason="Not implemented yet")
 def test_microblog_site_archive(microblog_site):
     """Tests that the MicroBlogSite has an archive"""
     archive = list(microblog_site.route_list["testmicroblog"].archives)[0]
@@ -33,7 +28,7 @@ def test_microblog_site_archive(microblog_site):
     assert archive_template == "microblog/microblog.html"
 
     page = archive.pages[0]
-    assert "<p>Hello World</p>" in page.content
+    assert "<p>Hello World</p>" in page._content
 
 
 def test_microblog_site_loads_theme(microblog_site):
@@ -43,10 +38,3 @@ def test_microblog_site_loads_theme(microblog_site):
 def test_microblog_archive_uses_microblog_theme(microblog_site):
     assert microblog_site.route_list["testmicroblog"].archive_template == "microblog/microblog.html"
 
-
-@pytest.mark.skip(reason="Not implemented yet")
-def test_microblog_collection_has_div(microblog_site):
-    p = microblog_site.output_path.joinpath("testmicroblog.html").read_text()
-    soup = Soup(p)
-    posts = soup.find("div", {"class": "microblog-post"})
-    assert posts

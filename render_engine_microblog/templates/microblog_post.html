@@ -5,8 +5,8 @@
             {% include template_vars['microblog_entry'] %}
         {% else %}
         <div class="microblog-post"> 
-            {{ post.content }}
-            <p id="microblog-post-metadata"> on {{ post.date }}</p>
+            {{ content }}
+            <p id="microblog-post-metadata"> on {{ date|to_pub_date }}</p>
         </div>
         {% endif %}
 {% endblock %}
