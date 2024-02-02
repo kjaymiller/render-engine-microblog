@@ -16,7 +16,7 @@ app.template_path = "docs/templates"
 app.static_paths.add("docs/static")
 
 if os.getenv("production", "false").lower() not in ["0", "false", "f"]:
-    SITE_URL = "https://kjaymiller.github.io/microblog" 
+    SITE_URL = "https://kjaymiller.github.io/render-engine-microblog" 
 else:
     SITE_URL = "http://localhost:8000"
 
