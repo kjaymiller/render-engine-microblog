@@ -2,7 +2,6 @@ import datetime
 
 import pytest
 from render_engine import Site
-
 from render_engine_microblog import MicroBlog
 from render_engine_microblog.collection import MicroBlogPost
 

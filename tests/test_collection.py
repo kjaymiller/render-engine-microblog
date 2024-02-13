@@ -37,4 +37,3 @@ def test_microblog_site_loads_theme(microblog_site):
 
 def test_microblog_archive_uses_microblog_theme(microblog_site):
     assert microblog_site.route_list["testmicroblog"].archive_template == "microblog/microblog.html"
-
