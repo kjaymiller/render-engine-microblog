@@ -1,12 +1,15 @@
 {% extends "page.html" %}
 {% block title %}{{super()}}| {{title}} {% endblock %}
 {% block content %}
-        {% if microblog_entry in template_vars %}
+    <div class="container">
+    {% for post in pages %}
+    {% if template_vars.microblog_entry %}
             {% include template_vars['microblog_entry'] %}
         {% else %}
         <div class="microblog-post"> 
-            {{ content }}
-            <p id="microblog-post-metadata"> on {{ date|to_pub_date }}</p>
+            {{ post.content }}
+            <p id="microblog-post-metadata"> on {{ post.date }}</p>
         </div>
         {% endif %}
+    {% endfor %}
 {% endblock %}

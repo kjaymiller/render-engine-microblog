@@ -8,6 +8,7 @@ dynamic = ["version"]
 description = "Microblog Parser and Collection for Render Engine"
 readme = "README.md"
 
+
 dependencies = [
     "render-engine >= 2024.1.1a2",
     "jinja2",
@@ -29,6 +30,9 @@ repository = "https://github.com/kjaymiller/render_engine_microblog/"
 [tool.setuptools_scm]
 local_scheme = "no-local-version"
 
+[tool.setup_tools.package-data]
+"*" = ["*.html"]
+
 [tool.ruff]
 select = ["E", "F", "I", "UP"]
 target-version = "py311"
@@ -38,6 +42,5 @@ ignore-init-module-imports = true
 [tool.pytest.ini_options]
 minversion = "8.0"
 addopts = "-ra -q --cov"
-testpaths = [
-    "tests",
-]
+testpaths = ["tests"]
+pythonpath = ["src"]
